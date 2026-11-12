@@ -1,47 +1,50 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="NIBEAM，一款轻量、易用的网络代理客户端，支持节点配置导入与订阅管理。">
-<title>NIBEAM - 轻量网络代理客户端</title>
+<meta name="theme-color" content="#f5f5f7">
+<title>NIBEAM — 让网络连接管理更简单</title>
 <style>
+:root{--green:#18B96A;--ink:#292d32;--muted:#747b83;--paper:#f5f5f7;--white:#fff}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Segoe UI","Microsoft YaHei",sans-serif;color:#eef4ff;background:#080e1b;min-height:100vh}
-.page{min-height:100vh;background:radial-gradient(ellipse at 50% 20%,rgba(24,185,106,.18),transparent 55%),linear-gradient(160deg,#0c172b,#080e1b 65%);overflow:hidden}
-header{max-width:1120px;margin:auto;padding:28px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:25px;font-weight:800;letter-spacing:3px;color:#fff}
-.logo span{color:#18B96A}
-.header-actions{display:flex;align-items:center;gap:10px}
-.github-link,.star-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 15px;border-radius:9px;text-decoration:none;font-size:13px;font-weight:650;transition:.2s;white-space:nowrap}
-.github-link{color:#dce8f5;border:1px solid rgba(150,175,205,.25);background:rgba(255,255,255,.035)}
-.star-link{color:#071b12;background:#18B96A;border:1px solid #18B96A}
-.github-link:hover,.star-link:hover{transform:translateY(-2px)}
-.star-link:hover{background:#20ca78;border-color:#20ca78}
-.github-link svg,.star-link svg{width:16px;height:16px;flex:none}
-main{max-width:1000px;margin:auto;padding:105px 24px 80px;text-align:center}
-.version{display:inline-block;padding:7px 15px;border:1px solid rgba(24,185,106,.4);border-radius:30px;color:#18B96A;background:rgba(24,185,106,.09);font-size:13px;margin-bottom:28px}
-h1{font-size:clamp(48px,9vw,86px);font-weight:800;letter-spacing:5px;line-height:1.15;background:linear-gradient(100deg,#fff 25%,#18B96A 75%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.subtitle{margin-top:24px;font-size:clamp(18px,3vw,24px);color:#b6c8e2;letter-spacing:2px}
-.description{max-width:650px;margin:22px auto 0;color:#8295b2;font-size:15px;line-height:2}
-.download{display:inline-flex;align-items:center;justify-content:center;margin-top:42px;padding:16px 42px;color:white;text-decoration:none;font-size:16px;font-weight:700;border-radius:9px;background:linear-gradient(110deg,#18B96A,#13a960);box-shadow:0 10px 35px rgba(24,185,106,.22);transition:.2s}
-.download:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(24,185,106,.34)}
-.download-note{margin-top:14px;color:#6f829f;font-size:13px}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:100px;text-align:left}
-.feature{padding:28px 24px;border:1px solid rgba(125,160,210,.15);border-radius:14px;background:rgba(20,38,65,.48)}
-.feature-icon{font-size:25px;margin-bottom:18px}
-.feature h3{font-size:17px;margin-bottom:12px}
-.feature p{color:#8295b2;font-size:13px;line-height:1.8}
-footer{padding:30px 20px;text-align:center;color:#586b87;font-size:12px;border-top:1px solid rgba(125,160,210,.1)}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+.page{min-height:100vh;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#f5f5f7 56%,#f5f5f7 100%)}
+header{height:76px;max-width:1120px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:23px;font-weight:750;letter-spacing:-1.2px;color:var(--ink)}
+.logo span{color:var(--green)}
+.github-link{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border:1px solid #d9dcdf;border-radius:999px;background:rgba(255,255,255,.78);color:#343a40;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
+.github-link:hover{border-color:var(--green);color:var(--green);transform:translateY(-1px)}
+.github-link svg{width:16px;height:16px;flex:none}
+main{max-width:1050px;margin:auto;padding:116px 24px 92px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:25px;padding:7px 13px;border-radius:999px;background:#e8f7ef;color:#168d54;font-size:12px;font-weight:650;letter-spacing:.5px}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+h1{font-size:clamp(58px,10vw,104px);line-height:1.02;letter-spacing:-5px;font-weight:750;color:var(--ink)}
+.subtitle{margin-top:25px;font-size:clamp(21px,3vw,29px);line-height:1.4;letter-spacing:-.7px;font-weight:600;color:#555d65}
+.description{max-width:590px;margin:19px auto 0;color:var(--muted);font-size:15px;line-height:1.9;font-weight:400}
+.actions{margin-top:36px;display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+.download{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 25px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-size:14px;font-weight:650;box-shadow:0 5px 16px rgba(24,185,106,.18);transition:all .2s}
+.download:hover{background:#149f5b;transform:translateY(-2px);box-shadow:0 8px 22px rgba(24,185,106,.24)}
+.download svg{width:16px;height:16px}
+.download-note{margin-top:13px;color:#969ca3;font-size:12px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:104px;text-align:left}
+.feature{min-height:190px;padding:27px 25px;border:1px solid rgba(38,45,52,.055);border-radius:20px;background:rgba(255,255,255,.82);box-shadow:0 8px 30px rgba(25,35,45,.035);transition:transform .2s,box-shadow .2s}
+.feature:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(25,35,45,.07)}
+.feature-icon{width:39px;height:39px;display:flex;align-items:center;justify-content:center;margin-bottom:21px;border-radius:12px;background:#e8f7ef;color:var(--green);font-size:20px;font-weight:700}
+.feature h3{font-size:16px;font-weight:650;letter-spacing:-.2px;margin-bottom:10px;color:#30363c}
+.feature p{color:#7d858d;font-size:13px;line-height:1.8}
+footer{padding:27px 20px 32px;text-align:center;color:#a0a5ab;font-size:11px;letter-spacing:.2px}
 @media(max-width:700px){
-main{padding-top:75px}
-.features{grid-template-columns:1fr;margin-top:65px}
-header{padding:22px 14px;gap:10px}
-.logo{font-size:21px;letter-spacing:2px}
-.header-actions{gap:6px}
-.github-link,.star-link{padding:8px 9px;font-size:12px;gap:5px}
-.github-link svg,.star-link svg{width:14px;height:14px}
+header{height:68px;padding:0 18px}
+.logo{font-size:21px}
+main{padding:82px 20px 65px}
+h1{letter-spacing:-3px}
+.subtitle{margin-top:19px}
+.description{font-size:14px}
+.features{grid-template-columns:1fr;margin-top:68px;gap:12px}
+.feature{min-height:0;padding:23px}
 }
 </style>
 </head>
@@ -49,34 +52,30 @@ header{padding:22px 14px;gap:10px}
 <div class="page">
 <header>
 <div class="logo">NI<span>BEAM</span></div>
-<div class="header-actions">
 <a class="github-link" href="https://github.com/Warren801078/NIBEAM" target="_blank" rel="noopener noreferrer" aria-label="打开 NIBEAM GitHub 仓库">
 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.62 1.21 3.26.92.1-.72.39-1.21.71-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.51.4.35.76 1.03.76 2.08v3.07c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
 GitHub 仓库
 </a>
-<a class="star-link" href="https://github.com/Warren801078/NIBEAM" target="_blank" rel="noopener noreferrer" aria-label="前往 GitHub 给 NIBEAM 点 Star">
-<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.4 2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.42l-5.88 3.09 1.12-6.55L2.48 9.32l6.58-.96L12 2.4Z"/></svg>
-Star 项目
-</a>
-</div>
 </header>
 <main>
-<div class="version">LATEST VERSION · V0.1.2</div>
+<div class="eyebrow"><span class="eyebrow-dot"></span> LATEST VERSION · V0.1.2</div>
 <h1>NIBEAM</h1>
 <div class="subtitle">让网络连接管理更简单</div>
-<p class="description">
-NIBEAM 是一款轻量、易用的网络代理客户端。
-支持节点配置导入与订阅管理，帮助你更便捷地管理网络连接配置。
-</p>
-<a class="download" href="https://github.com/Warren801078/NIBEAM/releases/download/v0.1.2/NIBEAM-0.1.2-Setup-x64.exe">↓&nbsp; 下载 Windows 版本</a>
+<p class="description">一款轻量、易用的网络代理客户端。支持节点配置导入与订阅管理，让网络连接配置清晰有序，管理更轻松。</p>
+<div class="actions">
+<a class="download" href="https://github.com/Warren801078/NIBEAM/releases/download/v0.1.2/NIBEAM-0.1.2-Setup-x64.exe">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 17v3h14v-3"/></svg>
+下载 Windows 版本
+</a>
+</div>
 <div class="download-note">Windows · x64 · 安装包约 25.4 MB</div>
 <section class="features">
-<div class="feature"><div class="feature-icon">⚡</div><h3>轻量简洁</h3><p>界面简洁，操作直观，专注于网络代理配置管理。</p></div>
-<div class="feature"><div class="feature-icon">⇄</div><h3>配置导入</h3><p>支持导入节点配置，方便集中管理网络连接信息。</p></div>
-<div class="feature"><div class="feature-icon">☷</div><h3>订阅管理</h3><p>支持订阅管理，让配置维护更加方便。</p></div>
+<div class="feature"><div class="feature-icon">✳</div><h3>轻量简洁</h3><p>清晰直观的界面设计，减少繁杂操作，专注于网络代理配置管理。</p></div>
+<div class="feature"><div class="feature-icon">⇄</div><h3>配置导入</h3><p>支持导入节点配置，集中管理网络连接信息，配置过程简单直接。</p></div>
+<div class="feature"><div class="feature-icon">☷</div><h3>订阅管理</h3><p>支持订阅管理，让日常配置维护更方便、更有条理。</p></div>
 </section>
 </main>
-<footer>© 2026 NIBEAM. All rights reserved.<br><br>Powered by GitHub Pages</footer>
+<footer>© 2026 NIBEAM. All rights reserved.</footer>
 </div>
 </body>
 </html>

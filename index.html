@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NIBEAM，一款轻量、易用的网络代理客户端，支持节点配置导入与订阅管理。">
+  <title>NIBEAM - 轻量网络代理客户端</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      color: #eef4ff;
+      background: #080e1b;
+      min-height: 100vh;
+    }
+
+    .page {
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 50% 20%, rgba(30, 100, 220, .22), transparent 55%),
+        linear-gradient(160deg, #0c172b, #080e1b 65%);
+      overflow: hidden;
+    }
+
+    header {
+      max-width: 1120px;
+      margin: auto;
+      padding: 28px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #fff;
+    }
+
+    .logo span {
+      color: #4d9dff;
+    }
+
+    .tag {
+      color: #8da6c8;
+      font-size: 13px;
+      border: 1px solid rgba(130, 170, 230, .2);
+      padding: 8px 14px;
+      border-radius: 30px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 105px 24px 80px;
+      text-align: center;
+    }
+
+    .version {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid rgba(77, 157, 255, .35);
+      border-radius: 30px;
+      color: #79b5ff;
+      background: rgba(40, 110, 220, .1);
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 9vw, 86px);
+      font-weight: 800;
+      letter-spacing: 5px;
+      line-height: 1.15;
+      background: linear-gradient(100deg, #fff 25%, #78b8ff 75%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      margin-top: 24px;
+      font-size: clamp(18px, 3vw, 24px);
+      color: #b6c8e2;
+      letter-spacing: 2px;
+    }
+
+    .description {
+      max-width: 650px;
+      margin: 22px auto 0;
+      color: #8295b2;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 42px;
+      padding: 16px 42px;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: 9px;
+      background: linear-gradient(110deg, #2878ed, #3b9cff);
+      box-shadow: 0 10px 35px rgba(35, 120, 240, .25);
+      transition: .2s;
+    }
+
+    .download:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(35, 120, 240, .4);
+    }
+
+    .download-note {
+      margin-top: 14px;
+      color: #6f829f;
+      font-size: 13px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 100px;
+      text-align: left;
+    }
+
+    .feature {
+      padding: 28px 24px;
+      border: 1px solid rgba(125, 160, 210, .15);
+      border-radius: 14px;
+      background: rgba(20, 38, 65, .48);
+    }
+
+    .feature-icon {
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .feature h3 {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    .feature p {
+      color: #8295b2;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+      color: #586b87;
+      font-size: 12px;
+      border-top: 1px solid rgba(125, 160, 210, .1);
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding-top: 75px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        margin-top: 65px;
+      }
+
+      header {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">NI<span>BEAM</span></div>
+      <div class="tag">轻量 · 简洁 · 易用</div>
+    </header>
+
+    <main>
+      <div class="version">LATEST VERSION · V0.1.2</div>
+
+      <h1>NIBEAM</h1>
+
+      <div class="subtitle">让网络连接管理更简单</div>
+
+      <p class="description">
+        NIBEAM 是一款轻量、易用的网络代理客户端。
+        支持节点配置导入与订阅管理，帮助你更便捷地管理网络连接配置。
+      </p>
+
+      <a class="download"
+         href="https://github.com/Warren801078/NIBEAM/releases/download/v0.1.2/NIBEAM-0.1.2-Setup-x64.exe">
+        ↓&nbsp; 下载 Windows 版本
+      </a>
+
+      <div class="download-note">
+        Windows · x64 · 安装包约 25.4 MB
+      </div>
+
+      <section class="features">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>轻量简洁</h3>
+          <p>界面简洁，操作直观，专注于网络代理配置管理。</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">⇄</div>
+          <h3>配置导入</h3>
+          <p>支持导入节点配置，方便集中管理网络连接信息。</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">☷</div>
+          <h3>订阅管理</h3>
+          <p>支持订阅管理，让配置维护更加方便。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 NIBEAM. All rights reserved.
+      <br><br>
+      Powered by GitHub Pages
+    </footer>
+  </div>
+</body>
+</html>
